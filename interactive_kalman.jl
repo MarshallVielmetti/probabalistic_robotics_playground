@@ -153,6 +153,10 @@ function main()
             update_robot(robot)
         elseif input ∈ ["l", "r"]
             move_robot(robot, input)
+        elseif input == "s"
+            print("Enter filename: ")
+            filename = readline()
+            savefig(filename)
         else
             print("Invalid Input. Press (q) to Quit")
         end
