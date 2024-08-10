@@ -62,6 +62,10 @@ r to reload
 s -> filename to save image
 q to quit
 
+### Example Outputs
+<img src="sample_images/2d_velocity_sample.png">
+<img src="sample_iamges/velocity_sample_two.png">
+
 ## Jupyter Setup
 To be honest this never ended up working so just ignore it.
 
