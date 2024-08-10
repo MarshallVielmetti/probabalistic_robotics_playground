@@ -31,7 +31,7 @@ Robot ground truth moves that distance
 Kalman Filter estimate moves that distance, and the covariance is increased accordingly.
 
 ### Examples
-<img src="sample_images/interactive_sample.png>
+<img src="sample_images/interactive_sample.png">
 
 ## efk_transform
 Generates the plots from chapter 3.3 on the EKF
