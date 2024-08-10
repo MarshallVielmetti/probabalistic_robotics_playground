@@ -42,4 +42,39 @@ Unfortunately this has to be done by editing the file manually
 
 ### Examples
 <img src="sample_images/ekf_quadratic_transform.png">
-<!-- (Image showing example distribution)[sample_images/ekf_quadratic_transform.png] -->
+
+
+## 2D Velocity Motion Model
+Based on Chapter 5.3, Velocity Motion Model
+
+### Alphas
+Modify the alpha variables to see their effects on the resulting distribution.
+The first two effect the impact of velocity and angular velocity on the velocity error
+The second two impact the angular velocity error
+The final pair impacts the resulting pose gamma
+
+### Control
+You can manually select a control, by modifying the initial control state.
+After entering "r" into the repl, the plot will refresh with new random controls chosen from a uniform distribution.
+
+### Using the Program
+r to reload
+s -> filename to save image
+q to quit
+
+## Jupyter Setup
+To be honest this never ended up working so just ignore it.
+
+Create a python3 virtual envrironment
+```
+python3 -m venv ./venv
+source ./venv/bin/activate
+```
+
+Install Required Packages
+```
+pip install notebook=6.4.12
+```
+
+Julia Required Packages:
+Only thing of note is WebSockets v1.5.9 NOT 1.6.0
