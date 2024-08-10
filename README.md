@@ -38,4 +38,5 @@ Can either use a linear transform, or input your own non-linear function
 Unfortunately this has to be done by editing the file manually
 
 ### Examples
-(Image showing example distribution)[sample_images/ekf_quadratic_transform.png]
+<img src="sample_images/ekf_quadratic_transform.png">
+<!-- (Image showing example distribution)[sample_images/ekf_quadratic_transform.png] -->
