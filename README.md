@@ -66,6 +66,15 @@ q to quit
 <img src="sample_images/2d_velocity_sample.png">
 <img src="sample_images/velocity_sample_two.png">
 
+
+## Chilean Mine SLAM Dataset Explorer
+
+| Images | Images |
+| --- | --- |
+| <img src="sample_images/02S_map_slice.png"> | <img src="sample_images/basic_heat_map.png"> |
+| <img src="sample_images/lidar_scatter_plot.png"> | <img src="sample_images/lidar_sliced.png"> | 
+
+
 ## Jupyter Setup
 To be honest this never ended up working so just ignore it.
 
@@ -82,3 +91,11 @@ pip install notebook=6.4.12
 
 Julia Required Packages:
 Only thing of note is WebSockets v1.5.9 NOT 1.6.0
+
+
+## DATASETS
+
+02S: https://dataset.amtc.cl/index.php/overview/
+02S_lidar.dat.tar.bz2
+02S_radar.dat.tar.bz2
+02S_timing.dat.tar.bz2
