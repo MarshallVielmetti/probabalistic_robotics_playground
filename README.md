@@ -71,7 +71,7 @@ q to quit
 
 | Images | Images |
 | --- | --- |
-| <img src="sample_images/02S_map_slice.png"> | <img src="sample_images/lidar_level_heatmap.png"> |
+| <img src="sample_images/02S_map_slice.png"> | <img src="sample_images/level_lidar_heatmap.png"> |
 | <img src="sample_images/lidar_scatter_plot.png"> | <img src="sample_images/lidar_sliced.png"> | 
 
 
