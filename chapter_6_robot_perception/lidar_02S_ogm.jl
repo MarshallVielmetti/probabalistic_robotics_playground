@@ -77,33 +77,33 @@ function display_radar_data()
 end
 
 # Data ranges from y: -5 to 5, z: -5 to 5
-function lidar_occupancy_grid_mapping()
+function lidar_level_heat_map()
     lidar_data = read_lidar_data("datasets/02S/02S_lidar.dat")
 
-    # Dont want lidar scans from way down the tunnel
-    @subset!(lidar_data, :x .< 10, :x .> 0)
+    # Only return a slice of z data, near level
+    @subset!(lidar_data, :x .> 0, :z .< 0.2, :z .> -0.2)
 
     # Create a 2D grid
     grid = zeros(120, 120)
 
     # Iterate over the LIDAR data
     for i in 1:size(lidar_data, 1)
+        x = Int(round(lidar_data.x[i] * 10))
         y = Int(round(lidar_data.y[i] * 10)) + 60
-        z = Int(round(lidar_data.z[i] * 10)) + 60
 
-        if y >= 1 && y <= 120 && z >= 1 && z <= 120
-            grid[y, z] += 1
+        if x >= 1 && x <= 120 && x >= 1 && y <= 120
+            grid[y, x] = 1 # This is weird but gives correct orientation (think rows, cols)
         end
     end
 
-    p = heatmap(grid, title="Occupancy Grid Mapping of LIDAR Data", xlabel="y", ylabel="z", legend=false)
+    p = heatmap(grid, title="Heatmap of LIDAR Data, |z| < 0.2", xlabel="x", ylabel="y", legend=false)
     display(p)
 end
 
 function main()
     println("02S LiDar Explorer")
     println("l: Display LIDAR data")
-    println("lo: Lidar Occupancy Grid Mapping")
+    println("lh: Lidar Level-Slice Heatmap")
     println("r: Display 2D-RADAR data")
     println("cr: Calibrate radar data")
 
@@ -113,9 +113,9 @@ function main()
     if input == "l"
         println("Displaying LIDAR Data:")
         display_lidar_data()
-    elseif input == "lo"
-        println("Lidar Occupancy Grid Mapping")
-        lidar_occupancy_grid_mapping()
+    elseif input == "lh"
+        println("Lidar Level-Slice Heatmap")
+        lidar_level_heat_map()
     elseif input == "r"
         println("Displaying 2D-RADAR Data:")
         display_radar_data()
